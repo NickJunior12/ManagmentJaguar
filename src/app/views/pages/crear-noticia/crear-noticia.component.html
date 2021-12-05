@@ -1,0 +1,33 @@
+<div class="container mt-9">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card" style="background-color:black;opacity:0.7;color:white!important">
+                <div class="card-body text-center">
+                    <span>{{ TituloPagina }}</span>
+
+                    <form class="mt-3" [formGroup]="noticiaForm" (ngSubmit)="agregarNoticia()">
+                        <div class="mb-3">
+                            <input formControlName="titulo" type="text" class="form-control" placeholder="Titulo">
+                        </div>
+                        <div *ngIf="noticiaForm.get('titulo')?.hasError('required') && noticiaForm.get('titulo')?.touched" class="text-danger">
+                            <span>El titulo de la noticia <b>es obligatorio</b></span>
+                        </div>
+                        <div class="mb-3">
+                            <textarea formControlName="noticia" class="form-control" rows="5"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="vigencia" class="form-label float-start"> Vigencia</label>
+                            <input formControlName="vigencia" type="date" class="form-control" step="1" min="2021-11-15" max="2030-12-31" value="{{ fechaVigencia | date: 'yyyy-MM-dd' }}">
+                            <input formControlName="imagen" type="hidden">
+                        </div>
+                        <div class="mb-3">
+                            <button routerLink='/dashboard' class="btn btn-secondary btn-lg float-start">Regresar</button>
+                            <button [disabled]="noticiaForm.invalid" class="btn btn-success btn-lg float-end">Guardar</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
