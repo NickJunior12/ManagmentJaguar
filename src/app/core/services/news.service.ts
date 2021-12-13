@@ -13,18 +13,18 @@ export class NewsService {
    }
 
   getNoticias(): Observable<any> {
-    return this.http.get<any>('http://localhost:8000/api/nots');
+    return this.http.get<any>('https://backend-jaguar.herokuapp.com/api/nots');
   }
 
   nuevaNoticia(noti: NoticiaModel): Observable<any> {
-     return this.http.post<any>('http://localhost:8000/api/nots', noti);
+     return this.http.post<any>('https://backend-jaguar.herokuapp.com/api/nots', noti);
   }
 
   getNoticia(id: string): Observable<any> {
-    return this.http.get<any>('http://localhost:8000/api/nots/' + id);
+    return this.http.get<any>('https://backend-jaguar.herokuapp.com/api/nots/' + id);
   }
 
   editNoticia(id: string, dataNoticia: NoticiaModel): Observable<any> {
-     return this.http.post<any>('http://localhost:8000/api/nots/actualizarNoticia/' + id, dataNoticia);
+     return this.http.post<any>('https://backend-jaguar.herokuapp.com/api/nots/actualizarNoticia/' + id, dataNoticia);
   }
 }

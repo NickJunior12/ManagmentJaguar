@@ -13,6 +13,8 @@ export class BannersService {
   }
 
  getBanners(): Observable<any> {
-    return this.http.get<any>('http://localhost:8000/api/uploads/get-banners');
+    // return this.http.get<any>('http://localhost:8000/api/uploads/get-banners');
+    return this.http.get<any>('https://backend-jaguar.herokuapp.com/api/uploads/get-banners');
   }
+
 }

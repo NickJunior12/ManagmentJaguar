@@ -25,7 +25,7 @@ export class CargaImagenesService {
     console.log('Solo obtenemos el primer archivo');
     console.log(f);
 
-    this.http.post<any>('http://localhost:8000/api/uploads/noticia/' + id, formData ).subscribe( resp => {
+    this.http.post<any>('https://backend-jaguar.herokuapp.com/api/uploads/noticia/' + id, formData ).subscribe( resp => {
       console.log('Respuesta del server');
       console.log(resp);
     }, err => {
@@ -47,7 +47,7 @@ export class CargaImagenesService {
     console.log('Solo obtenemos el primer archivo');
     console.log(f);
 
-    this.http.post<any>('http://localhost:8000/api/uploads/banner', formData ).subscribe( resp => {
+    this.http.post<any>('https://backend-jaguar.herokuapp.com/api/uploads/banner', formData ).subscribe( resp => {
       console.log('Respuesta del server');
       console.log(resp);
     }, err => {
