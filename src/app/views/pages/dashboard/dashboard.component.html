@@ -22,35 +22,7 @@
                         <div class="col-lg-2"><i [routerLink]="['/editar-noticia',noti.id]" class="fas fa-edit fa-lg text-primary" style="cursor: pointer;"></i>
                             <i [routerLink]="['/upoad-noticia',noti.id]" class="fas fa-cloud-upload-alt fa-lg text-primary" style="cursor: pointer;"></i></div>
                     </div>
-                    <!-- <table class="table mt-5 text-white" style="width:400px">
-                        <thead>
-                            <tr>
-                                <th scope="col">Titulo</th>
-                                <th scope="col">Noticia</th>
 
-                                <th scope="col">Vigencia</th>
-                                <th scope="col">Foto</th>
-
-                                <th scope="col">Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let noti of listaNoticias">
-                                <td>
-                                    <p class="text-start">{{ noti.titulo | uppercase }}</p>
-                                </td>
-                                <td>
-                                    <p class="text-start">{{ noti.descripcion | slice:0:100 }}</p>
-                                </td>
-                                <td>{{ noti.vigencia | date: 'dd-MM-yyyy' }}</td>
-                                <td><img src="http://localhost:8000/uploadNoticias/{{ noti.imagen }}" width="180"></td>
-                                <td>
-                                    <i [routerLink]="['/editar-noticia',noti.id]" class="fas fa-edit text-primary"></i>
-                                    <i [routerLink]="['/upoad-noticia',noti.id]" class="fas fa-cloud-upload-alt text-success"></i>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table> -->
                 </div>
             </div>
         </div>

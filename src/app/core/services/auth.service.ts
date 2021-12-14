@@ -37,7 +37,7 @@ export class AuthService {
    }
 
    logout() {
-
+      localStorage.removeItem('token');
    }
 
     private setToken( idToken: string ) {

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     @Inject(DOCUMENT) private document: Document, 
     private renderer: Renderer2,
-    private router: Router
+    private router: Router, private auth: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -29,11 +30,20 @@ export class NavbarComponent implements OnInit {
   /**
    * Logout
    */
+  // onLogout(e) {
+  //   e.preventDefault();
+  //   localStorage.removeItem('isLoggedin');
+
+  //   if (!localStorage.getItem('isLoggedin')) {
+  //     this.router.navigate(['/auth/login']);
+  //   }
+  // }
+
   onLogout(e) {
     e.preventDefault();
-    localStorage.removeItem('isLoggedin');
+    this.auth.logout();
 
-    if (!localStorage.getItem('isLoggedin')) {
+    if (!this.auth.isAuth()) {
       this.router.navigate(['/auth/login']);
     }
   }
