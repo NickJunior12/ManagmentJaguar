@@ -3,6 +3,6 @@ export class NoticiaModel {
     titulo: string;
     descripcion: string;
     vigencia: Date;
-    activo: number;
+    activado: number;
     imagen: string;
 }

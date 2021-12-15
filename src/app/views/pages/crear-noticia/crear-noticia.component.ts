@@ -24,6 +24,7 @@ export class CrearNoticiaComponent implements OnInit {
       titulo: ['', Validators.required],
       noticia: ['', Validators.required],
       vigencia: ['2021-11-16'],
+      activado: 1,
       imagen: ['']
     });
 
@@ -44,7 +45,7 @@ export class CrearNoticiaComponent implements OnInit {
       descripcion: this.noticiaForm.get('noticia')?.value,
       vigencia: this.noticiaForm.get('vigencia').value,
       imagen: this.noticiaForm.get('imagen').value,
-      activo: 1
+      activado: 1
     };
 
     Swal.fire({
