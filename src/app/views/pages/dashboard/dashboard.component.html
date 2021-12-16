@@ -14,7 +14,7 @@
                         <div class="col-lg-2">Opciones</div>
                     </div>
                     <div class="row mt-4" *ngFor="let noti of listaNoticias" style="border-bottom:3px solid #F3AF4F;">
-                        <div class="col-lg-2 mb-2"><img src="https://backend-jaguar.herokuapp.com/uploadsNoticias/{{ noti.imagen }}" class="img-fluid img-thumbnail"></div>
+                        <div class="col-lg-2 mb-2"><img src="{{ noti.imagen }}" class="img-fluid img-thumbnail"></div>
                         <div class="col-lg-2 text-start">{{ noti.titulo | uppercase }}</div>
                         <div class="col-lg-4 text-start">{{ noti.descripcion }}</div>
                         <div class="col-lg-2 text-start">{{ noti.vigencia | date: 'dd-MM-yyyy' }}</div>
