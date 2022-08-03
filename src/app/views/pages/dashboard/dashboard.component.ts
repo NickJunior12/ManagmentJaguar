@@ -1,28 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-
 import { NoticiaModel } from 'src/app/core/models-general/noticia-model';
 import { NewsService } from 'src/app/core/services/news.service';
-
-// export type apexChartOptions = {
-//   series: ApexAxisChartSeries;
-//   nonAxisSeries: ApexNonAxisChartSeries;
-//   colors: string[];
-//   grid: ApexGrid;
-//   chart: ApexChart;
-//   xaxis: ApexXAxis;
-//   yaxis: ApexYAxis;
-//   markers: ApexMarkers,
-//   stroke: ApexStroke,
-//   legend: ApexLegend,
-//   responsive: ApexResponsive[],
-//   tooltip: ApexTooltip,
-//   fill: ApexFill
-//   dataLabels: ApexDataLabels,
-//   plotOptions: ApexPlotOptions,
-//   labels: string[],
-//   title: ApexTitleSubtitle
-// };
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard',
@@ -51,6 +30,26 @@ export class DashboardComponent implements OnInit {
               });
     }
 
+    borrarNoticia(id: number){
+      console.log("borrar");
+      console.log(id);
 
+      this.news.deleteNoticia(id)
+      .subscribe( resp=> {
+        console.log(resp);
+        Swal.fire({
+          title: 'La noticia se borro exitosamente',
+          text: resp.msg,
+          icon: 'info'
+        });
+        this.getNoticias();
+      }, error => {
+        Swal.fire({
+          title: 'Error',
+          text: error,
+          icon: 'info'
+        });
+      });
+    }
 
 }

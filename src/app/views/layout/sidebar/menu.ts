@@ -25,4 +25,9 @@ export const MENU: MenuItem[] = [
     icon: 'home',
     link: '/nuevo-banner'
   },
+  {
+    label: 'Beneficios',
+    icon: 'home',
+    link: '/beneficios'
+  },
 ];

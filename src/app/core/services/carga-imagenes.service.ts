@@ -35,14 +35,10 @@ export class CargaImagenesService {
   }
 
   cargarImagenesBanner( id: string, imagenes: FileItem[] ) {
-    console.log(imagenes);
-
     const f = imagenes[0].archivo;
 
     const formData = new FormData();
     formData.append('bannerImg', f);
-
-    console.log('imprimo el data');
 
     console.log('Solo obtenemos el primer archivo');
     console.log(f);
@@ -55,4 +51,21 @@ export class CargaImagenesService {
       console.log(err);
     });
   }
+
+  cargarImagenesBeneficios( id: string, imagenes: FileItem[] ) {
+    const f = imagenes[0].archivo;
+console.log("validamos el archivo");
+console.log(f);
+    const formData = new FormData();
+    formData.append('beneficioImg', f);
+
+    this.http.post<any>('https://backend-jaguar.herokuapp.com/api/uploads/beneficio/' + id, formData ).subscribe( resp => {
+      console.log('Respuesta del server');
+      console.log(resp);
+    }, err => {
+      console.log('Respuesta del server con error');
+      console.log(err);
+    });
+  }
+
 }

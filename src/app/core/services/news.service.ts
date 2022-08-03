@@ -27,4 +27,8 @@ export class NewsService {
   editNoticia(id: string, dataNoticia: NoticiaModel): Observable<any> {
      return this.http.post<any>('https://backend-jaguar.herokuapp.com/api/nots/actualizarNoticia/' + id, dataNoticia);
   }
+
+  deleteNoticia(id: number): Observable<any> {
+    return this.http.delete<any>('https://backend-jaguar.herokuapp.com/api/nots/' + id);
+ }
 }

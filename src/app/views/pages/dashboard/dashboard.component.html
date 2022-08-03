@@ -19,8 +19,11 @@
                         <div class="col-lg-4 text-start">{{ noti.descripcion }}</div>
                         <div class="col-lg-2 text-start">{{ noti.vigencia | date: 'dd-MM-yyyy' }}</div>
 
-                        <div class="col-lg-2"><i [routerLink]="['/editar-noticia',noti.id]" class="fas fa-edit fa-lg text-primary" style="cursor: pointer;"></i>
-                            <i [routerLink]="['/upoad-noticia',noti.id]" class="fas fa-cloud-upload-alt fa-lg text-primary" style="cursor: pointer;"></i></div>
+                        <div class="col-lg-2">
+                            <i [routerLink]="['/editar-noticia',noti.id]" class="fas fa-edit fa-lg text-primary" style="cursor: pointer;"></i>
+                            <i [routerLink]="['/upoad-noticia',noti.id]" class="fas fa-cloud-upload-alt fa-lg text-primary" style="cursor: pointer;"></i>
+                            <i (click)="borrarNoticia(noti.id)" class="fas fa-trash fa-lg text-primary" style="cursor: pointer;"></i>
+                        </div>
                     </div>
 
                 </div>

@@ -9,9 +9,7 @@ import { AuthGuard } from './core/guard/auth.guard';
 
 import { AppComponent } from './app.component';
 import { ErrorPageComponent } from './views/pages/error-page/error-page.component';
-
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
-
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';

@@ -29,6 +29,22 @@ const routes: Routes = [
         loadChildren: () => import('./views/pages/upoad-noticia/upoad-noticia.module').then(m => m.UpoadNoticiaModule)
       },
       {
+        path: 'beneficios',
+        loadChildren: () => import('./views/pages/beneficios/beneficios.module').then(m => m.BeneficiosModule)
+      },
+      {
+        path: 'crear-beneficio',
+        loadChildren: () => import('./views/pages/crear-beneficio/crear-beneficio.module').then(m => m.CrearBeneficioModule)
+      },
+      {
+        path: 'editar-beneficio/:id',
+        loadChildren: () => import('./views/pages/crear-beneficio/crear-beneficio.module').then(m => m.CrearBeneficioModule)
+      },
+      {
+        path: 'upload-beneficio/:id',
+        loadChildren: () => import('./views/pages/upload-beneficio/upload-beneficio.module').then(m => m.UploadBeneficioModule)
+      },
+      {
         path: 'nuevo-banner',
         loadChildren: () => import('./views/pages/nuevo-banner/nuevo-banner.module').then(m => m.NuevoBannerModule)
       },
