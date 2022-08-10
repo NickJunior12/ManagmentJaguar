@@ -7,19 +7,19 @@
                     <button class="btn btn-success btn-lg float-end" routerLink='/crear-beneficio'>Agregar</button>
                     <div class="row mt-5" style="border-bottom:3px solid #F3AF4F">
                         <div class="col-lg-2"></div>
-                        <div class="col-lg-2 text-start">Titulo</div>
+                        <div class="col-lg-3 text-start">Titulo</div>
                         <div class="col-lg-4 text-start">Beneficio</div>
-                        <div class="col-lg-2 text-start">Documento</div>
-                        <div class="col-lg-2 text-start">Opciones</div>
+
+                        <div class="col-lg-3 text-start">Opciones</div>
                     </div>
                     <div class="row mt-4" *ngFor="let beneficio of listaBeneficios" style="border-bottom:3px solid #F3AF4F;">
                         <div class="col-lg-2 mb-2"><img src="{{ beneficio.imagen }}" class="img-fluid img-thumbnail"></div>
-                        <div class="col-lg-2 text-start">{{ beneficio.titulo | uppercase }}</div>
+                        <div class="col-lg-3 text-start">{{ beneficio.titulo | uppercase }}</div>
                         <div class="col-lg-4 text-start">{{ beneficio.descripcion }}</div>
-                        <div class="col-lg-2 text-start"><a href="{{ beneficio.documento }}" target="_blank">Download</a></div>
-                        <div class="col-lg-2 text-start">
+                        <div class="col-lg-3 text-start">
                             <i [routerLink]="['/editar-beneficio',beneficio.id]" class="fas fa-edit fa-lg text-primary" style="cursor: pointer;"></i>
                             <i [routerLink]="['/upload-beneficio',beneficio.id]" class="fas fa-cloud-upload-alt fa-lg text-primary" style="cursor: pointer;"></i>
+                            <i [routerLink]="['/documentos-beneficios',beneficio.id, beneficio.titulo]" class="fas fa-link fa-lg text-primary" style="cursor: pointer;"></i>
                             <i (click)="borrarBeneficio(beneficio.id)" class="fas fa-trash fa-lg text-primary" style="cursor: pointer;"></i>
                         </div>
                     </div>

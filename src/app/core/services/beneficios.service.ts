@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BeneficioModel } from '../models-general/beneficio-model';
+import { DocumentosBeneficios } from '../models-general/documento-beneficio-model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,17 @@ export class BeneficiosService {
 
   deleteBeneficio(id: number): Observable<any> {
     return this.http.delete<any>('https://backend-jaguar.herokuapp.com/api/beneficios/' + id);
+ }
+
+ nuevoDoc(doc: DocumentosBeneficios): Observable<any> {
+    return this.http.post<any>('https://backend-jaguar.herokuapp.com/api/beneficios/documentos', doc);
+  }
+
+  getDoc(id_beneficio: string): Observable<any> {
+    return this.http.get<any>('https://backend-jaguar.herokuapp.com/api/beneficios/documentos/' + id_beneficio);
+  }
+
+  deleteDoc(id: number): Observable<any> {
+    return this.http.delete<any>('https://backend-jaguar.herokuapp.com/api/beneficios/documentos/borrado/' + id);
  }
 }

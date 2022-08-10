@@ -45,6 +45,10 @@ const routes: Routes = [
         loadChildren: () => import('./views/pages/upload-beneficio/upload-beneficio.module').then(m => m.UploadBeneficioModule)
       },
       {
+        path: 'documentos-beneficios/:id/:titulo',
+        loadChildren: () => import('./views/pages/documentos-beneficios/documentos-beneficios.module').then(m => m.DocumentosBeneficiosModule)
+      },
+      {
         path: 'nuevo-banner',
         loadChildren: () => import('./views/pages/nuevo-banner/nuevo-banner.module').then(m => m.NuevoBannerModule)
       },

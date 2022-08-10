@@ -22,8 +22,7 @@ export class CrearBeneficioComponent implements OnInit {
       titulo: ['', Validators.required],
       beneficio: ['', Validators.required],
       activado: 1,
-      imagen: [''],
-      documento: ['', Validators.required]
+      imagen: ['']
     });
 
     this.id = aRouter.snapshot.paramMap.get('id');
@@ -43,7 +42,7 @@ export class CrearBeneficioComponent implements OnInit {
       descripcion: this.noticiaForm.get('beneficio')?.value,
       imagen: '',
       activado: 1,
-      documento: this.noticiaForm.get('documento')?.value
+      documento: ''
     };
 
     Swal.fire({
@@ -99,7 +98,7 @@ export class CrearBeneficioComponent implements OnInit {
           beneficio: data.bene.descripcion,
           imagen: data.bene.imagen,
           activado: 1,
-          documento: data.bene.documento
+          documento: ''
         });
         console.log("*******log*******************");
         console.log(this.noticiaForm);
